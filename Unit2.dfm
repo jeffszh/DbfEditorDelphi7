@@ -14,6 +14,7 @@ object Form2: TForm2
   OldCreateOrder = False
   Position = poDefault
   Visible = True
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 16
   object Panel1: TPanel

@@ -13,6 +13,7 @@ type
     Panel2: TPanel;
     Table1: TTable;
     DataSource1: TDataSource;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -25,6 +26,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+end;
 
 end.
 
