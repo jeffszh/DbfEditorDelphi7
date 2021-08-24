@@ -10,61 +10,51 @@ object Form1: TForm1
   Font.Height = -16
   Font.Name = #23435#20307
   Font.Style = []
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
   OldCreateOrder = False
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 16
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 1165
-    Height = 41
-    Align = alTop
-    Caption = 'Panel1'
-    TabOrder = 0
+  object MainMenu1: TMainMenu
+    Left = 168
+    Top = 88
+    object File1: TMenuItem
+      Caption = '&File'
+      object Open1: TMenuItem
+        Caption = '&Open'
+        OnClick = Open1Click
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Exit1: TMenuItem
+        Caption = 'E&xit'
+        OnClick = Exit1Click
+      end
+    end
+    object Window1: TMenuItem
+      Caption = '&Window'
+      object Tile1: TMenuItem
+        Caption = '&Tile'
+        OnClick = Tile1Click
+      end
+      object Cascade1: TMenuItem
+        Caption = '&Cascade'
+        OnClick = Cascade1Click
+      end
+    end
   end
-  object DBGrid1: TDBGrid
-    Left = 0
-    Top = 41
-    Width = 1165
-    Height = 644
-    Align = alClient
-    DataSource = DataSource1
-    TabOrder = 1
-    TitleFont.Charset = GB2312_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -16
-    TitleFont.Name = #23435#20307
-    TitleFont.Style = []
-  end
-  object Panel2: TPanel
-    Left = 0
-    Top = 685
-    Width = 1165
-    Height = 41
-    Align = alBottom
-    Caption = 'Panel2'
-    TabOrder = 2
-  end
-  object Table1: TTable
-    DatabaseName = 'db1'
-    TableName = 'Glord.dbf'
-    Left = 880
-    Top = 144
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.DBF'
+    Left = 168
+    Top = 184
   end
   object Database1: TDatabase
     DatabaseName = 'db1'
     DriverName = 'STANDARD'
-    Params.Strings = (
-      ''
-      'USER NAME=jeff')
     SessionName = 'Default'
-    Left = 880
-    Top = 88
-  end
-  object DataSource1: TDataSource
-    DataSet = Table1
-    Left = 880
-    Top = 200
+    Left = 448
+    Top = 104
   end
 end
